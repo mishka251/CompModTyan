@@ -9,3 +9,14 @@ C:\Users\Михаил\source\repos\CompMod\obj\Debug\netcoreapp2.1\CompMod.Assem
 C:\Users\Михаил\source\repos\CompMod\obj\Debug\netcoreapp2.1\CompMod.AssemblyInfo.cs
 C:\Users\Михаил\source\repos\CompMod\obj\Debug\netcoreapp2.1\CompMod.dll
 C:\Users\Михаил\source\repos\CompMod\obj\Debug\netcoreapp2.1\CompMod.pdb
+C:\Users\Михаил\Source\Repos\mishka251\CompModTyan\bin\Debug\netcoreapp2.1\CompMod.deps.json
+C:\Users\Михаил\Source\Repos\mishka251\CompModTyan\bin\Debug\netcoreapp2.1\CompMod.runtimeconfig.json
+C:\Users\Михаил\Source\Repos\mishka251\CompModTyan\bin\Debug\netcoreapp2.1\CompMod.runtimeconfig.dev.json
+C:\Users\Михаил\Source\Repos\mishka251\CompModTyan\bin\Debug\netcoreapp2.1\CompMod.dll
+C:\Users\Михаил\Source\Repos\mishka251\CompModTyan\bin\Debug\netcoreapp2.1\CompMod.pdb
+C:\Users\Михаил\Source\Repos\mishka251\CompModTyan\obj\Debug\netcoreapp2.1\CompMod.csprojAssemblyReference.cache
+C:\Users\Михаил\Source\Repos\mishka251\CompModTyan\obj\Debug\netcoreapp2.1\CompMod.csproj.CoreCompileInputs.cache
+C:\Users\Михаил\Source\Repos\mishka251\CompModTyan\obj\Debug\netcoreapp2.1\CompMod.AssemblyInfoInputs.cache
+C:\Users\Михаил\Source\Repos\mishka251\CompModTyan\obj\Debug\netcoreapp2.1\CompMod.AssemblyInfo.cs
+C:\Users\Михаил\Source\Repos\mishka251\CompModTyan\obj\Debug\netcoreapp2.1\CompMod.dll
+C:\Users\Михаил\Source\Repos\mishka251\CompModTyan\obj\Debug\netcoreapp2.1\CompMod.pdb

@@ -5,15 +5,15 @@ namespace CompMod
 {
     class Program
     {
-        struct Client
-        {
-            double timeCome;
-            double timeWait;
-            double timeService;
+        //struct Client
+        //{
+        //    double timeCome;
+        //    double timeWait;
+        //    double timeService;
 
-            double timeLeave { get => timeCome + timeWait + timeService; }
+        //    double timeLeave { get => timeCome + timeWait + timeService; }
 
-        }
+        //}
 
         struct ServiceEvent
         {
@@ -73,6 +73,15 @@ namespace CompMod
             }
 
             Console.WriteLine(events[events.Count - 1].time + "    " + events[events.Count - 1].name);
+            Console.WriteLine("Клиентов было - " + A.Count);
+            double Wmid = 0;
+            foreach(double w in W)
+            {
+                Wmid += w;
+            }
+            Wmid /= W.Count;
+            Console.WriteLine("Средняя задержка - "+Wmid);
+
         }
     }
 }
