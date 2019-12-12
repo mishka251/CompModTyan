@@ -32,9 +32,9 @@ namespace CompMod
                 }
 
                 t = min;
-                if ( min == nextClient)
+                if (min == nextClient)
                 {
-                   
+
                     clients.Add(new Client(t));
                     int index = clients.Count;
                     nextClient = GenerateNextClientCome(t, lambda, lambda_t);
@@ -50,7 +50,6 @@ namespace CompMod
                         double y = GenerateY(lambda);
                         clients[index - 1].timeService = y;
                         devices[device].timeFree = t + y;
-                        devices[device].clientIndex = index;
                         devices[device].clients.Add(clients[index - 1]);
                         now.clientInDevice[device] = index;
                     }
@@ -60,21 +59,20 @@ namespace CompMod
                 else
                 {
                     Device nowStop = devices.Where(device => (device.timeFree == min)).First();
-                    Client freeClient = clients[nowStop.clientIndex - 1];
-                   
+                    int deveci_index = devices.IndexOf(nowStop);
+                    Client freeClient = clients[now.clientInDevice[deveci_index] - 1];
+
                     freeClient.timeLeave = t;
 
-
-                    nowStop.usedClient++;
 
 
                     now = new ServiceState(now, client_leave, t);
                     now.clinetInSystem--;
                     if (now.clinetInSystem >= 3)
                     {
-                        int nextClient = devices.Select(device => device.clientIndex).Max() + 1;
+                        int nextClient = now.clientInDevice.Max() + 1;
                         now.clientInDevice[devices.IndexOf(nowStop)] = nextClient;
-                        nowStop.clientIndex = nextClient;
+
                         double y = GenerateY(lambda);
                         nowStop.timeFree = t + y;
 
@@ -84,7 +82,7 @@ namespace CompMod
                     else
                     {
                         nowStop.timeFree = double.MaxValue;
-                        nowStop.clientIndex = ServiceState.NoClientValue;
+
                         now.clientInDevice[devices.IndexOf(nowStop)] = ServiceState.NoClientValue;
                     }
 
@@ -117,7 +115,7 @@ namespace CompMod
                 Random r2 = new Random();
                 var U2 = r2.NextDouble();
                 if (U2 < lambda_t(t) / lambda)
-                    return t;//S.Add(t);
+                    return t;
             }
 
         }
@@ -178,8 +176,7 @@ namespace CompMod
             double T = double.Parse(Console.ReadLine());
             double lambda = 1.0;
             lambda_f lambda_func = (x) => x > T / 2 ? 0.5 : 1;
-            // A = new List<double>();
-            //D = new List<double>();
+
 
             clients = new List<Client>();
 
@@ -202,12 +199,12 @@ namespace CompMod
             Console.WriteLine();
             Console.WriteLine();
             Console.WriteLine($"Клиентов в системе {clients.Count}");
-            double midTime =ClientsMidTimeInSystem(clients, T);
+            double midTime = ClientsMidTimeInSystem(clients, T);
             Console.WriteLine($"Среднее ремя клиента в системе {midTime:f2}");
             double clientsInQueue = ClientsMidWaitTime(clients);
             Console.WriteLine($"Среднее ремя клиента в очереди {clientsInQueue:f2}");
 
-            for (int i =0; i<devices.Count; i++)
+            for (int i = 0; i < devices.Count; i++)
             {
                 double coeff = WorkCoefficient(devices[i], T);
                 Console.WriteLine($"Занятость устройства {i} = {coeff:f2}");

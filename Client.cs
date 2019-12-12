@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CompMod
 {
@@ -22,25 +20,34 @@ namespace CompMod
         /// Время ухода клиента
         /// </summary>
         public double timeLeave;
-
+        /// <summary>
+        /// Время в системе
+        /// </summary>
+        /// <param name="maxT">конец обслуживания</param>
+        /// <returns></returns>
         public double GetTimeIsSystem (double maxT)
         {
             return Math.Min(timeLeave, maxT) - timeCome;
         }
-
+        /// <summary>
+        /// время ухода
+        /// </summary>
+        /// <param name="maxT">максвремя</param>
+        /// <returns></returns>
         public double GetTimeLeave(double maxT)
         {
             return  Math.Min(timeLeave, maxT);
         }
+        /// <summary>
+        /// Время обслуживания с учетом закрытия
+        /// </summary>
+        /// <param name="maxT"></param>
+        /// <returns></returns>
         public double GetTimeInDevice(double maxT)
         {
             return Math.Max(0, GetTimeLeave(maxT) - timeWait - timeCome);
         }
 
-        public Client()
-        {
-
-        }
         public Client(double timeCome)
         {
             this.timeCome = timeCome;

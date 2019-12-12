@@ -23,11 +23,16 @@ namespace CompMod
         /// </summary>
         public string type;
 
+        /// <summary>
+        /// Клиентов в очереди в этот момент
+        /// </summary>
         public int ClientsInQueue { get => Math.Max(0, clinetInSystem - devicesCnt); }
-
+        /// <summary>
+        /// Кол-воустрйств
+        /// </summary>
         public int devicesCnt;
 
-     public static  readonly  int NoClientValue = 0;
+        public static readonly int NoClientValue = 0;
 
         public ServiceState(string type, int devices)
         {
